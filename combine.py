@@ -43,7 +43,7 @@ class Location:
 
 
 ###
-# This class exists only to export a seat code, i.e.: F9, A4
+# This class exists only to export a seat code, i.e.: 9F, 20A
 ###
 class Seats:
     def __init__(self, letter, num):
@@ -63,14 +63,14 @@ class Seats:
         return self.num
 
     def validateSeats(self, l, n):
-        for x in range(0, len(string.ascii_uppercase)):
-            tempstr = string.ascii_uppercase[x]
-            if l == tempstr:
-                if n in range(1, 6):
+        if n in range(1, 20):
+            for x in range(0, 5):
+                tempstr = string.ascii_uppercase[x]
+                if l == tempstr:
                     return True
 
     def export(self):
-        return (self.letter + str(self.num))
+        return (str(self.num) + self.letter)
     # Somehow the most important function, again
 
     

@@ -16,7 +16,7 @@ def __FeeReport__():
        
 def menu():
        root = Tk()
-       root.title('Menu')
+       root.title('Airline booking management system')
        root.iconbitmap('plane.ico')
        root.geometry('1300x750')
        

@@ -11,7 +11,7 @@ class Passenger:
         self.f_code = string(f_code)
         # Flight code; e.g: VN457
         self.seat = string(seat)
-        # Seat number; e.g.: F3, F5, F6
+        # Seat number; e.g.: 3F, 5A, 16B
 
     def validatePID(self, pid):
         if len(pid) < 13:
@@ -21,13 +21,14 @@ class Passenger:
     # Validate function for personal ID, makes sure it follows Vietnam's ID
 
     def validateSeat(self, seat):
-        tempnum = int(seat[1])
+        tempstr = ''
         for x in range(0, len(string.ascii_uppercase)):
-            tempchar = string.ascii_uppercase[x]
-            if seat[0] == tempchar:
-                if tempnum in range(1, 6):
-                    return True
-    # Validate function for seat, the first letter in range A to Z, and seat number from 1 to 9
+            temp = string.ascii_uppercase[x]
+            if (seat[1] == temp) or (seat[2] == temp):
+                tempstr = seat.replace(temp, '')
+        if int(tempstr) in range(0, 20):
+            return True
+    # Validate function for seat, the first letter in range 1 to 20, and seat number from A to F
 
     def load_passenger_data(self, seat_booking):
         # load passenger data from pickle file
@@ -47,7 +48,7 @@ class Passenger:
     
     def get_infos(self, booking_id):
     #func to get ticket infos
-    	pass
+        pass
     
 
     ###
@@ -156,18 +157,18 @@ class Flight:
     
     def seats_to_pickle(self):
     #load seat into pickle file
-    	seats = {'1A', '1B', '1C', '1D', '1E', '1F', '2A', '2B', '2C', '2D', '2E', '2F', '3A', '3B', '3C', '3D', '3E', '3F', '4A', '4B', '4C', '4D', '4E', '4F', '5A', '5B', '5C', '5D', '5E', '5F', '6A', '6B', '6C', '6D', '6E', '6F', '7A', '7B', '7C', '7D', '7E', '7F', '8A', '8B', '8C', '8D', '8E', '8F', '9A', '9B', '9C', '9D', '9E', '9F', '10A', '10B', '10C', '10D', '10E', '10F', '11A', '11B', '11C', '11D', '11E', '11F', '12A', '12B', '12C', '12D', '12E', '12F', '13A', '13B', '13C', '13D', '13E', '13F', '14A', '14B', '14C', '14D', '14E', '14F', '15A', '15B', '15C', '15D', '15E', '15F', '16A', '16B', '16C', '16D', '16E', '16F', '17A', '17B', '17C', '17D', '17E', '17F', '18A', '18B', '18C', '18D', '18E', '18F', '19A', '19B', '19C', '19D', '19E', '19F', '20A', '20B', '20C', '20D', '20E', '20F'}
-    	if not path.exists('flight_data'):
+        seats = {'1A', '1B', '1C', '1D', '1E', '1F', '2A', '2B', '2C', '2D', '2E', '2F', '3A', '3B', '3C', '3D', '3E', '3F', '4A', '4B', '4C', '4D', '4E', '4F', '5A', '5B', '5C', '5D', '5E', '5F', '6A', '6B', '6C', '6D', '6E', '6F', '7A', '7B', '7C', '7D', '7E', '7F', '8A', '8B', '8C', '8D', '8E', '8F', '9A', '9B', '9C', '9D', '9E', '9F', '10A', '10B', '10C', '10D', '10E', '10F', '11A', '11B', '11C', '11D', '11E', '11F', '12A', '12B', '12C', '12D', '12E', '12F', '13A', '13B', '13C', '13D', '13E', '13F', '14A', '14B', '14C', '14D', '14E', '14F', '15A', '15B', '15C', '15D', '15E', '15F', '16A', '16B', '16C', '16D', '16E', '16F', '17A', '17B', '17C', '17D', '17E', '17F', '18A', '18B', '18C', '18D', '18E', '18F', '19A', '19B', '19C', '19D', '19E', '19F', '20A', '20B', '20C', '20D', '20E', '20F'}
+        if not path.exists('flight_data'):
             self.load_pickle('flight_data', seats)
             
     def load_data(self, file_name, objects):
     # Func to load pickle data
-    	with open(file_name, 'wb') as open_file:
+        with open(file_name, 'wb') as open_file:
             pickle.dump(objects, open_file)
             
     def open_pickle(self):
     # Func to open and return pickle data
-	if path.exists('flight_data'):
+        if path.exists('flight_data'):
             with open('flight_data', 'rb') as seats:
                 return pickle.load(seats)
         else:
@@ -175,11 +176,11 @@ class Flight:
     
     def check_seat(self, seat_alloc):        
     # Check seat available or not (1 is available, 0 is n/a)
-    	pass
+        pass
     
     def take_seat(self, seat_alloc, seat):
     # Take seat and load booked ones in pickle file
-    	pass
+        pass
     
     ###
     # Setter and getters

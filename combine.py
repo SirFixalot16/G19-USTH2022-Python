@@ -101,7 +101,7 @@ class Seats:
 
 
 def main():
-    l = []
+    print('g')
 
 if __name__ == "__main__":
     main()

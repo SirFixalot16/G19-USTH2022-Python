@@ -1,6 +1,5 @@
 from domains.Flight import *
 from domains.Plane import *
-from domains.Passenger import *
 
 ###
 # Planes

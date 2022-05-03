@@ -4,22 +4,25 @@ import os
 
 
 def __information__():
-       filename = 'Customer_info_FrontEnd.py'
+       filename = 'Passenger.py'
        os.system(filename)
-       os.system('notepad'+filename)
 
 def __FeeReport__():
-       filename = 'Fee_Frontend.py'
+       filename = 'Plane.py'
        os.system(filename)
-       os.system('notepad'+filename)
-       
+
+def PlaneInfo():
+
+       filename2 = 'Seats.py'
+
+       os.system(filename2)
        
 def menu():
        root = Tk()
        root.title('Airline booking management system')
        root.iconbitmap('plane.ico')
        root.geometry('1300x750')
-       
+
        title_Frame = LabelFrame(root, font = ('arial',50,'bold'), width = 500, height = 100, bg = 'lightblue', relief = 'raise', bd = 13)
        title_Frame.grid(row = 0, column = 0, pady = 50)
        
@@ -52,7 +55,7 @@ def menu():
        Button_1.grid(row = 0, column = 3, padx = 50)
        Button_2 = Button(Frame_2, text = 'VIEW', font = ('arial',16,'bold'), width = 8, command = __FeeReport__)
        Button_2.grid(row = 0, column = 3, padx = 50)
-       Button_3 = Button(Frame_3, text = 'VIEW', font = ('arial',16,'bold'), width = 8, command = __FeeReport__)
+       Button_3 = Button(Frame_3, text = 'VIEW', font = ('arial',16,'bold'), width = 8, command = PlaneInfo)
        Button_3.grid(row = 0, column = 3, padx = 50)
 
 

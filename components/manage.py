@@ -20,7 +20,7 @@ def PlaneInfo():
 def menu():
        root = Tk()
        root.title('Airline booking management system')
-       root.iconbitmap('plane.ico')
+       # root.iconbitmap('plane.ico')
        root.geometry('1300x750')
 
        title_Frame = LabelFrame(root, font = ('arial',50,'bold'), width = 500, height = 100, bg = 'lightblue', relief = 'raise', bd = 13)

@@ -5,14 +5,14 @@ from os import path
 
 class Passenger:
     def __init__(self, name, pid, f_code, seat):
-        self.name = string(name) 
+        self.name = (name) 
         # Name; e.g.: Vu Quoc Thai
         self.pid = string(pid) 
         # Personal ID; e.g.: 001202001264
 
-        self.f_code = string(f_code)
+        self.f_code = (f_code)
         # Flight code; e.g: VN457
-        self.seat = string(seat)
+        self.seat = (seat)
         # Seat number; e.g.: 3F, 5A, 16B
 
     def validatePID(self, pid):
@@ -86,10 +86,10 @@ class Passenger:
 
 class Plane:
     def __init__(self, name, f_code):
-        self.name = string(name)
+        self.name = (name)
         # Name; e.g.: Boeing 757
 
-        self.f_code = string(f_code)
+        self.f_code = (f_code)
         ###
         # Flight code; e.g: VN457
         # To be sychronised with Passenger through Flight class
@@ -117,7 +117,7 @@ class Flight:
     p_depart, p_arrive,
     ):
         
-        self.f_code = string(f_code)
+        self.f_code = (f_code)
         ###
         # Flight code; e.g: VN457
         # To be sychronised with Passenger and Plane
@@ -144,8 +144,8 @@ class Flight:
         # Use 24hr format
         ###
 
-        self.p_depart = string(p_depart)
-        self.p_arrive = string(p_arrive)
+        self.p_depart = (p_depart)
+        self.p_arrive = (p_arrive)
         ###
         # Variables for depart and arrive location
         # Use format: City, Country

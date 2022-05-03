@@ -151,6 +151,9 @@ class Flight:
         # Use format: City, Country
         ###
 
+        self.flights = []
+        # Flight list
+
     def validateTime(self, t):
         if t in range(0, 24):
             return True
@@ -295,7 +298,32 @@ class Flight:
     # Function to fill the list of passenger of flight according to an external list of passenger
     ###
     
+    def input(self):
+    # Input flight info
+        f_code = str(input())
+        plane = str(input())
+        t_depart = int(input())
+        t_arrive = int(input())
+        p_depart = str(input())
+        p_arrive = str(input())
+        flight = {
+            "f_code" : f_code,
+            "plane" : plane,
+            "t_depart" : t_depart,
+            "t_arrive" : t_arrive,
+            "p_depart" : p_depart,
+            "p_arrive" : p_arrive
+        }
+        return flight
 
+    def changeTime(self, flights):
+    # change depart and arrive time of selected flight
+        selected_flight = str(input())
+        for i in range(len(flights)):
+            if selected_flight == flights[i]['f_code']:
+                flights[i]['t_depart'] = int(input)
+                flights[i]['t_arrive'] = int(input)
+        return flights
     
     ###
     # Setter and getters
@@ -335,5 +363,10 @@ class Flight:
     def setPA(self, pa):
         self.p_arrive = pa
     def getPA(self):
-        return self.p_arrive   
+        return self.p_arrive 
+
+    def setFlights(self, f):
+        self.flights = f
+    def getFlights(self):
+        return self.flights  
     

@@ -11,7 +11,6 @@ class Location:
         self.pays = string(pays)
         # French for country
 
-
     def returnCT(self, pays):
         ct_list = []
         match pays:

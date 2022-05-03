@@ -17,7 +17,6 @@ f1 = Flight('VN457', 0, 0, 'Boeing 757', 16, 20, 'Hanoi, Vietnam', 'Phu Quoc, Vi
 
 def main():
     print('Main')
-    
 
 if __name__ == "__main__":
     main()

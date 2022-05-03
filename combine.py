@@ -16,9 +16,17 @@ class Location:
         ct_list = []
         match pays:
             case 'Vietnam':
-                ct_list = ['Hanoi', 'Saigon', 'Da Nang', 'Phu Quoc', 'Hue', 'Da Lat']
+                ct_list = ['Hanoi', 'Saigon', 'Da Nang', 'Phu Quoc', 'Hue', 'Da Lat', 'Nha Trang', 'Ca Mau', 'Con Dao']
             case 'Japan':
-                ct_list = ['Tokyo', 'Nagoya', 'Osaka']
+                ct_list = ['Tokyo', 'Nagoya', 'Osaka', 'Fukuoka']
+            case 'Korea':
+                ct_list = ['Seoul', 'Busan']
+            case 'China':
+                ct_list = ['Guangzhou', 'Shanghai', 'Chengdu', 'Beijing', 'Hong Kong', 'Taipei', 'Macau']
+            case 'Vietnam':
+                ct_list = ['Hanoi', 'Saigon', 'Da Nang', 'Phu Quoc', 'Hue', 'Da Lat', 'Nha Trang', 'Ca Mau', 'Con Dao']
+            case 'Japan':
+                ct_list = ['Tokyo', 'Nagoya', 'Osaka', 'Fukuoka']
             case _:        
                 ct_list = ['Error']
         return ct_list

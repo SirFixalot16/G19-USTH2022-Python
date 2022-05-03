@@ -172,9 +172,9 @@ class Flight:
             pickle.dump(alls, seats)    
             
         if not path.exists('booked_seats'):
-            self.load_pickle('booked_seats', booked)
+            self.load_data('booked_seats', booked)
         elif path.exists('booked_seats'):
-            self.load_pickle('booked_seats', booked)
+            self.load_data('booked_seats', booked)
 
     def initArray():
         SeatArray = [[0, 0, 0, 0, 0, 0],

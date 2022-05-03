@@ -23,10 +23,22 @@ class Location:
                 ct_list = ['Seoul', 'Busan']
             case 'China':
                 ct_list = ['Guangzhou', 'Shanghai', 'Chengdu', 'Beijing', 'Hong Kong', 'Taipei', 'Macau']
-            case 'Vietnam':
-                ct_list = ['Hanoi', 'Saigon', 'Da Nang', 'Phu Quoc', 'Hue', 'Da Lat', 'Nha Trang', 'Ca Mau', 'Con Dao']
-            case 'Japan':
-                ct_list = ['Tokyo', 'Nagoya', 'Osaka', 'Fukuoka']
+            case 'Thailand':
+                ct_list = ['Bangkok', 'Phuket']
+            case 'Singapore':
+                ct_list = ['Singapore']
+            case 'Indonesia':
+                ct_list = ['Jakarta', 'Bali']
+            case 'Phillipines':
+                ct_list = ['Manila']
+            case 'Myanmar':
+                ct_list = ['Yargon']
+            case 'Malaysia':
+                ct_list = ['Kuala Lumpur']
+            case 'Laos':
+                ct_list = ['Luang Prabang']
+            case 'Campuchia':
+                ct_list = ['Siem Reap', 'Phnom Phenh']
             case _:        
                 ct_list = ['Error']
         return ct_list
@@ -91,10 +103,7 @@ class Seats:
     
 
 def main():
-    EligibleCT = ("Hanoi", "Saigon")
-    # City tuple
-    EligiblePays = ("Vietnam")
-    # Country tuple
+    
 
     SeatArray = [[0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0]]

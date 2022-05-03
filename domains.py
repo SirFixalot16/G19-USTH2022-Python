@@ -1,5 +1,7 @@
 import string
 import pickle
+import random
+from os import path
 
 class Passenger:
     def __init__(self, name, pid, f_code, seat):
@@ -48,7 +50,15 @@ class Passenger:
     
     def get_infos(self, booking_id):
     #func to get ticket infos
-        pass
+        psg = dict()
+        if path.exists('passenger_data'):
+            with open('passenger_data', 'rb') as user_seat:
+                psg = pickle.load(user_seat)
+        if booking_id in psg:
+            return psg[booking_id]
+        else:
+            print("Invalid Id..!!")
+            return {}
     
 
     ###
@@ -174,13 +184,55 @@ class Flight:
         else:
             return {}
     
-    def check_seat(self, seat_alloc):        
-    # Check seat available or not (1 is available, 0 is n/a)
-        pass
-    
-    def take_seat(self, seat_alloc, seat):
+    def check_seat(self, seat_alloc):
+    # Check seat available or not (0 is n/a, 1 is available, 2 is all are n/a)
+        seats_all = self.open_pickle()
+        seat_list = list()
+        if len(seats_all) > 0:
+            for i in seats_all:
+                    seat_list.append(sorted(seats_all[i]))
+            for i in seat_list:
+                if len([j for j in i if j.endswith('A') or j.endswith('B') or j.endswith('C') or j.endswith('D') or j.endswith('E') or j.endswith('F')]) > 0:
+                    return 1
+                else:
+                    return 0
+        else:
+            return 2
+
+    def auto_booking(self):
+    # func to auto booking seat 
+        with open('flight_data', 'rb') as seats:
+            alls = pickle.load(seats)
+        n = random.randint(1, 20)
+        return "".join([j for j in alls[n] if j.endswith('A') or j.endswith('B') or j.endswith('C') or j.endswith('D') or j.endswith('E') or j.endswith('F')][0])
+
+
+    def take_seat(self, seat):
     # Take seat and load booked ones in pickle file
-        pass
+        booked = dict()
+        if path.exists('booked_seats'):
+            with open('booked_seats', 'rb') as reseats:
+                booked = pickle.load(reseats)
+        
+        with open('flight_data', 'rb') as seats:
+            alls = pickle.load(seats)
+            if seat not in booked.values():
+                booked = [seat]
+            else:
+                booked.append(seat)
+            if seat in alls[int(seat[0])]:
+                        alls[int(seat[0])].discard(seat)
+        
+
+        with open('flight_data', 'wb') as seats:
+            pickle.dump(alls, seats)    
+            
+        if not path.exists('booked_seats'):
+            self.load_pickle('booked_seats', booked)
+        elif path.exists('booked_seats'):
+            self.load_pickle('booked_seats', booked)
+
+
     
     ###
     # Setter and getters
@@ -222,11 +274,3 @@ class Flight:
     def getPA(self):
         return self.p_arrive   
     
-    
-
-    
-
-
-
-
-

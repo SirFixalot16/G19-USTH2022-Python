@@ -12,13 +12,19 @@ class Location:
         # French for country
 
 
-    def validateCT(self, ct_list, ct):
-        for x in range(0, len(ct_list)):
-            tempct = ct_list[x]
-            if ct == tempct:
-                return True
+    def returnCT(self, pays):
+        ct_list = []
+        match pays:
+            case 'Vietnam':
+                ct_list = ['Hanoi', 'Saigon', 'Da Nang', 'Phu Quoc', 'Hue', 'Da Lat']
+            case 'Japan':
+                ct_list = ['Tokyo', 'Nagoya', 'Osaka']
+            case _:        
+                ct_list = ['Error']
+        return ct_list
 
-    def validatePays(self, pays_list, pays):
+    def validatePays(self, pays):
+        pays_list = ("Vietnam", "Japan", "Korea", "China", "Thailand", "Singapore", "Indonesia", "Phillipines", "Myanmar", "Malaysia", "Laos", "Campuchia")
         for x in range(0, len(pays_list)):
             tempp = pays_list[x]
             if pays == tempp:

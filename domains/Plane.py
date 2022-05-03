@@ -2,10 +2,10 @@ import string
 
 class Plane:
     def __init__(self, name, f_code):
-        self.name = string(name)
+        self.name = (name)
         # Name; e.g.: Boeing 757
 
-        self.f_code = string(f_code)
+        self.f_code = (f_code)
         ###
         # Flight code; e.g: VN457
         # To be sychronised with Passenger through Flight class

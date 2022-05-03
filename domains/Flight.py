@@ -2,8 +2,6 @@ import string
 import pickle
 import random
 from os import path
-from Seats import *
-from Location import *
 
 class Flight:
     def __init__(self, f_code, 

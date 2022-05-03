@@ -4,14 +4,14 @@ from os import path
 
 class Passenger:
     def __init__(self, name, pid, f_code, seat):
-        self.name = string(name) 
+        self.name = (name) 
         # Name; e.g.: Vu Quoc Thai
         self.pid = string(pid) 
         # Personal ID; e.g.: 001202001264
 
-        self.f_code = string(f_code)
+        self.f_code = (f_code)
         # Flight code; e.g: VN457
-        self.seat = string(seat)
+        self.seat = (seat)
         # Seat number; e.g.: 3F, 5A, 16B
 
     def validatePID(self, pid):

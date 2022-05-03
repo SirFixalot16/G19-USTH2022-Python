@@ -1,6 +1,6 @@
-from domains import Plane
-from domains import Flight
-from combine import *
+from domains.Flight import *
+from domains.Plane import *
+from domains.Passenger import *
 
 ###
 # Planes

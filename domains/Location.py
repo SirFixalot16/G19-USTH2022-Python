@@ -5,9 +5,9 @@ import string
 ###
 class Location:
     def __init__(self, ct, pays):
-        self.ct = string(ct)
+        self.ct = (ct)
         # City
-        self.pays = string(pays)
+        self.pays = (pays)
         # French for country
 
     def returnCT(self, pays):

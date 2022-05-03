@@ -1,6 +1,7 @@
 from domains.Flight import *
 from domains.Plane import *
 from domains.Passenger import *
+from GUI.manage import *
 
 ###
 # Planes
@@ -20,3 +21,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    menu()

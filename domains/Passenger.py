@@ -6,7 +6,7 @@ class Passenger:
     def __init__(self, name, pid, f_code, seat):
         self.name = (name) 
         # Name; e.g.: Vu Quoc Thai
-        self.pid = string(pid) 
+        self.pid = (pid) 
         # Personal ID; e.g.: 001202001264
 
         self.f_code = (f_code)

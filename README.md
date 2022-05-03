@@ -35,3 +35,19 @@ Goal:
 - The list is for displaying data, and changing data on the list like: name, personal ID, seats.
 - Changing depart and arrive time of flights.
 - Adding flights.
+
+Presentation Link:
+https://docs.google.com/presentation/d/16_pwFk3NqUYDyRx6_52HbJjtr1HLjAMhPdsIBxJus4k/edit#slide=id.gc6f90357f_0_31
+
+Project presentation:
+
+- Presentation + Demo: 9 mins
+- Q/A: 3 mins
+- A slide is required
+
+Slide structure:
+
+- Introduction (what, why...)
+- Structure (py classes, modules, packages, database diagram)
+- Demo
+- Conclusion (done, not done...)

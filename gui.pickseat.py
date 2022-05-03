@@ -4,7 +4,7 @@ from tkinter import ttk
 
       
 class MainApp(ttk.Frame):
-    def something():
+    def something(self):
        root = Tk()
        root.title('Pick your desired seat')
        root.iconbitmap('plane.ico')

@@ -99,17 +99,10 @@ class Seats:
         return (str(self.num) + self.letter)
     # Somehow the most important function, again
 
-    
-    
+
 
 def main():
-    
-
-    SeatArray = [[0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0]]
-    # Seat 2D array
-
-
+    l = []
 
 if __name__ == "__main__":
     main()

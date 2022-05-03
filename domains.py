@@ -232,6 +232,69 @@ class Flight:
         elif path.exists('booked_seats'):
             self.load_pickle('booked_seats', booked)
 
+    def initArray():
+        SeatArray = [[0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],]
+        return SeatArray
+    # Return an 2D array of completely empty seats, set the 
+
+    def SeatAutofill(self, array, lpassenger):
+        temparr = [[0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],]
+        for x in range(0, len(lpassenger)):
+            tempnum = lpassenger[x].getSeat()
+            temp = ''
+            tempchar = ''
+            intchar = -1
+            for y in range(0, len(string.ascii_uppercase)):
+                tempchar = string.ascii_uppercase[y]
+                if (tempnum[1] == tempchar) or (tempnum[2] == tempchar):
+                    temp = tempnum.replace(tempchar, '')
+                    intchar = y
+            temp = int(temp)
+            array[temp][intchar] = 1
+            temparr[temp][intchar] = lpassenger[x].getName()
+        self.list_passenger = temparr
+    ###
+    # Function to fill the list of passenger of flight according to an external list of passenger
+    ###
+    
 
     
     ###

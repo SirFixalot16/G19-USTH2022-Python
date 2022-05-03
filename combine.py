@@ -36,14 +36,14 @@ class Location:
                 ct_list = ['Kuala Lumpur']
             case 'Laos':
                 ct_list = ['Luang Prabang']
-            case 'Campuchia':
-                ct_list = ['Siem Reap', 'Phnom Phenh']
+            case 'Cambodia':
+                ct_list = ['Siem Reap', 'Phnom Penh']
             case _:        
                 ct_list = ['Error']
         return ct_list
 
     def validatePays(self, pays):
-        pays_list = ("Vietnam", "Japan", "Korea", "China", "Thailand", "Singapore", "Indonesia", "Phillipines", "Myanmar", "Malaysia", "Laos", "Campuchia")
+        pays_list = ("Vietnam", "Japan", "Korea", "China", "Thailand", "Singapore", "Indonesia", "Phillipines", "Myanmar", "Malaysia", "Laos", "Cambodia")
         for x in range(0, len(pays_list)):
             tempp = pays_list[x]
             if pays == tempp:
